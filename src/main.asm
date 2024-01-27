@@ -1,24 +1,23 @@
 .include "macros.asm"
 
 .data
-	msg_row:  		.asciiz "Enter the row for the move: "
+	msg_row:  	.asciiz "Enter the row for the move: "
  	msg_column:  	.asciiz "Enter the column for the move: "
- 	msg_win:  		.asciiz "Congratulations! You won!\n"
- 	msg_lose:  		.asciiz "Oh no! You hit a bomb! Game over.\n"
-	msg_invalid:  .asciiz "Invalid move. Please try again.\n"
+ 	msg_win:  	.asciiz "Congratulations! You won!\n"
+ 	msg_lose:  	.asciiz "Oh no! You hit a bomb! Game over.\n"
+	msg_invalid:    .asciiz "Invalid move. Please try again.\n"
 
 .globl main 	 	
 .text
 
 main:
-  addi $sp, $sp, -256 	# board; 
-  li $s1, 1	     				# int gameActive = 1;
-  move $s0, $sp
-  move $a0, $s0 
+  	addi $sp, $sp, -256 	# board; 
+  	li $s1, 1		# int gameActive = 1;
+  	move $a0, $sp
   
-  jal inicialializeBoard # initializeBoard(board);
-  move $a0, $s0 				
-  jal plantBombs 				 # placeBombs(board);
+  	jal inicialializeBoard 	# initializeBoard(board);
+  	move $a0, $s0 				
+  	jal plantBombs 		# placeBombs(board);
   
   begin_while:					 # while (gameActive) {
   beqz $s1, end_while
