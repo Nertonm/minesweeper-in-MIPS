@@ -1,15 +1,13 @@
 .include "macros.asm"
-.globl inicialializeBoard
+.globl startBoard
 
-inicialializeBoard:
+startBoard:
 	save_context
 	move $s0, $a0 
-  
   	li $s1,0 	# i = 0
   	begin_for_i_it:	# for (int i = 0; i < SIZE; ++i) {
   	li $t0,SIZE
   	bge $s1,$t0,end_for_i_it 
-  
   	li $s2,0 	# j = 0
   	begin_for_j_it:	# for (int j = 0; j < SIZE; ++j) {
   	li $t0,SIZE
