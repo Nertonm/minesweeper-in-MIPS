@@ -24,7 +24,7 @@ main:
   		
   	gameActive:		# while (gameActive) {
   		beqz gameState, endGame
-  		move $a0, $s0 	# passing $a0 as a parametrer 
+  		move $a0, $s0 	# passing $s0 as a parametrer 
   		li $a1, 0
   		jal printBoard	# printBoard(board,0); // Shows the board without bombs
   		# printf("Enter the row for the move: ");
@@ -53,6 +53,7 @@ main:
   		sw $s0, 0 ($sp)
   		move $a0, $s2
   		move $a1, $s3
+  		# move $a2, $s0
   		jal play
   		addi $sp, $sp, 4
   		
