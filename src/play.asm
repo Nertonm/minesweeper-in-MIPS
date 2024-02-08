@@ -1,6 +1,7 @@
 .include "macros.asm"
 
 .globl play
+.eqv bomb
 
 play:
 	save_context
@@ -11,18 +12,16 @@ play:
 	add 	$t2, $t0, $t1	#  Math for calculing the matrix space
 	
 	li 	$t3, -1	
-	li	$t4, -2
-	
 	move	$a3, $t2
 	
-	beq 	$t2, $t3, lost	# Actual bomb check 
-	beq 	$t2, $t4, else	# Else
-	j 	continue	# If not bomb continue
+	beq 	$t2, $t3, lost		# Actual bomb check 
+	jal	countAdjacentBombs
+	j 	continue		# If not bomb continue
+	
 	lost:			
 		move 	$v0, $zero
-	continue:
 	
-	else:
+	continue:
 		restore_context
 		jr 	$ra
 	
