@@ -21,7 +21,8 @@ play:
 	lost:			
 		move 	$v0, $zero
 	continue:
+	
 	else:
-	restore_context
-	jr 	$ra
+		restore_context
+		jr 	$ra
 	
