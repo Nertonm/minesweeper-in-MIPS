@@ -18,11 +18,9 @@ countAdjacentBombs:
 	addi auxcol, auxcol 1
 	addi row, row -1
 	addi col, col -1
-
 	loop1:
 		beq 	row, auxrow, endloop1		
-		addi 	row, row, 1 		
-				
+		addi 	row, row, 1 				
 		loop2:
 			beq 	col, auxcol, loop2
 			blt	col, $zero, aaa 
@@ -36,14 +34,11 @@ countAdjacentBombs:
 			aaa: 
 				addi 	col, col, 1
 				j 	loop1
-
 countadd:
 	addi 	count, count, 1
 	addi 	col, col, 1
 	j 	loop1
-
 endloop1:
 	j	play2
-
 endloop2:
 	j	loop1
