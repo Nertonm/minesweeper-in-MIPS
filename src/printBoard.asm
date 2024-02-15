@@ -4,6 +4,11 @@
 
 printBoard:
 	save_context
+	
+	### Debug
+	li	$a1, 1
+	
+	
 	move 	$s0, $a0
 	move 	$s1, $a1
 	li 	$v0, 11 

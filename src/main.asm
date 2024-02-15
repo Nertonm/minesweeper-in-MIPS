@@ -1,3 +1,4 @@
+
 .include "macros.asm"
 
 .data
@@ -52,10 +53,9 @@ main:
   		# Passing board to subroutine play
   		addi 	$sp, $sp, -4
   		sw 	$s0, 0 ($sp)
-  		move 	$a0, $s2
-  		move 	$a1, $s3
-  		
-  		# move $a2, $s0
+  		move 	$a0, $s0
+  		move 	$a1, $s2
+  		move 	$a2, $s3
   		jal 	play
   		addi 	$sp, $sp, 4
   		

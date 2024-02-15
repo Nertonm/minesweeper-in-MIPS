@@ -1,28 +1,33 @@
 .include "macros.asm"
 
 .globl play
-.globl play2
-.eqv bomb
-.eqv 	row $s2 
-.eqv 	col $s3
+.globl return
+.eqv 	row $t0 
+.eqv 	col $t1
+.eqv	sum $t2
 
 play:
 	save_context
-	move 	row, $a0  		#  Saving row to subroutine space
-	move 	col, $a1  		#  Saving row to subroutine space 
-	sll 	$t0, row, 5		#  Math for calculing the matrix space
-	sll 	$t1, col, 2		#  Math for calculing the matrix space
-	add 	$t2, $t0, $t1		#  Math for calculing the matrix space
-	li 	$t3, -1	
-	beq 	$t2, $t3, lost		# Actual bomb check 
-	j	countAdjacentBombs
-	play2:
-	j 	continue		# If not bomb continue
-	
-	lost:			
-		move 	$v0, $zero
-	
-	continue:
+	move 	$s0, $a0
+	sll 	row, $a1,  5 	
+  	sll	col, $a2 , 2
+  	add 	sum, col, row 	
+  	add 	sum, sum, $s0
+  	lw 	$t3, 0 (sum)
+  	beq 	$t3, 0, return
+	bne	$t3, -1, continue
+		li	$v0, 0
 		restore_context
-		jr 	$ra
-	
+		jr	$ra
+		
+	continue: 
+	bne	$t3, -2, continue
+	jal	countAdjacentBombs
+	sw	$v1, (sum)
+	bne 	$v1, $zero, aaa
+	jal	revealNeighboringCells
+	return:
+	aaa:
+	restore_context
+	li 	$v0, 1
+	jr 	$ra
