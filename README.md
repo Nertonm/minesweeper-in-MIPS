@@ -18,4 +18,19 @@ A função countAdjacentBombs é responsável pela contagem das bombas adjacente
 posição escolhida no tabuleiro, permitindo ao jogador tomar decisões estratégicas
 sobre onde fazer movimentos seguros baseado na quantidade de bombas ao redor de
 uma célula específica.
+
 ![1](photos/1.png)
+
+As funções utilizam loops para iterar as células vizinhas tanto em C quanto em
+assembly, contando com loops aninhados para percorrer tanto as linhas quanto as
+colunas da matriz. O endereço da célula atual no tabuleiro é calculado e comparado a -1
+(valor que indica a presença de uma bomba) e, caso as condições definidas sejam
+satisfeitas, a variável ‘count’ é incrementada.
+
+![2](photos/2.png)
+  
+No código em assembly, o ‘endloop2’ incrementa a variável ‘row’, reseta a ‘column’, e
+retorna para o ‘loop1’. Após toda a iteração ser completa, a função retorna a variável
+‘count’. O mesmo é feito na função em C, porém de forma mais abstrata.
+
+![3](photos/3.png)
