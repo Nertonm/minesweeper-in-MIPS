@@ -92,3 +92,12 @@ Após contar o número de células válidas, o código checa se o valor é menor
 quantidade total de células menos a quantidade de bombas. Caso seja, a função retorna
 0, indicando que o jogo não está terminado. Caso contrário, a mesma retorna 1 e o jogo é
 vencido.
+
+### Utilização
+
+E recomendado o uso do programa Mars para executar o projeto, mas o mesmo tambem pode ser compilado para binario normalmente.;
+
+### Contribuições
+
+Manuela 50%
+Thiago 50%
