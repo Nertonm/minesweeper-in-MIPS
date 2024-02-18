@@ -7,12 +7,9 @@ Este README fornece informações sobre a atribuição, como configurar e execut
 
 ## Sumário
 - [countAdjacentBombs](#countAdjacentBombs)
-- [Seções do Circuito](#seções-do-circuito)
-  - [Main](#main)
-  - [Timer](#timer)
-  - [Core](#core)
-- [Utilização](#utilização)
-- [Instalação](#instalação)
+- [revealAdjacentCells](#revealAdjacentCells)
+- [Play](#Play)
+- [checkVictory](#checkVictory)
 - [Contribuições](#contribuições)
 - [Licença](#licença)
 
@@ -21,3 +18,4 @@ A função countAdjacentBombs é responsável pela contagem das bombas adjacente
 posição escolhida no tabuleiro, permitindo ao jogador tomar decisões estratégicas
 sobre onde fazer movimentos seguros baseado na quantidade de bombas ao redor de
 uma célula específica.
+![1](photos/1.png)
