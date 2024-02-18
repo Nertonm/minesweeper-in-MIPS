@@ -42,3 +42,16 @@ valores diferentes de -2 (indicando células não reveladas) sejam encontradas.
 
 ![4](photos/4.png)
 
+A estrutura da função é similar a da countAdjacentBombs, sendo a maior diferença
+entre ambas a recursividade utilizada pela revealAdjacentCells para revelar as
+células vazias de uma determinada área.
+
+![5](photos/5.png)
+
+Após checar que uma determinada célula é vazia, a função countAdjacentBombs é
+chamada e, caso o valor retornado seja igual a zero, a função revealAdjacentCells é
+chamada para continuar o processo recursivamente.
+
+![6](photos/6.png)
+
+### Play
