@@ -34,3 +34,11 @@ retorna para o ‘loop1’. Após toda a iteração ser completa, a função ret
 ‘count’. O mesmo é feito na função em C, porém de forma mais abstrata.
 
 ![3](photos/3.png)
+
+### revealAdjacentCells
+A função revealAdjacentCells é responsável por expor as áreas vizinhas a uma célula
+vazia no tabuleiro do jogo, permitindo uma revelação em cadeia até que células com
+valores diferentes de -2 (indicando células não reveladas) sejam encontradas.
+
+![4](photos/4.png)
+
