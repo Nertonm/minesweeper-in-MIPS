@@ -55,3 +55,40 @@ chamada para continuar o processo recursivamente.
 ![6](photos/6.png)
 
 ### Play
+
+A função play é responsável por processar as jogadas efetuadas. Ela verifica se o jogador
+atingiu uma bomba e encerra o jogo se esse for o caso. Se a célula selecionada não for
+uma bomba, o jogo é continuado normalmente.
+
+![7](photos/7.png)
+
+Ambas as versões inicializam a função utilizando a matriz do tabuleiro e as
+coordenadas definidas pelo jogador.
+
+![8](photos/8.png)
+
+A função chama a coundAdjacentBombs para revelar a quantidade de bombas ao redor
+da célula selecionada e, caso a quantidade seja zero, a revealAdjacentCells é utilizada
+para expor as células vazias ao redor do local escolhido.
+
+![9](photos/9.png)
+
+A função retorna 1 caso nenhuma bomba tenha sido atingida, indicando que o jogo deve
+ser continuado. Caso contrário, a mesma retorna o valor 0, indicando o fim do jogo.
+
+### checkVictory
+
+A função checkVictory verifica se o jogador venceu o jogo contando as células
+não-bomba reveladas, e retorna 1 se o jogador vencer e 0 caso contrário.
+
+![10](photos/10.png)
+
+Ambas as versões validam a posição do tabuleiro e incrementam a variável ‘count’ caso
+as condições sejam satisfeitas.
+
+![11](photos/11.png)
+
+Após contar o número de células válidas, o código checa se o valor é menor do que a
+quantidade total de células menos a quantidade de bombas. Caso seja, a função retorna
+0, indicando que o jogo não está terminado. Caso contrário, a mesma retorna 1 e o jogo é
+vencido.
